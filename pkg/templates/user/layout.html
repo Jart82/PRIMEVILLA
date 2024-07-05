@@ -1,0 +1,249 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Real estate listing, Homes for sale, property for sale, real estate agents, buy a house, sell a home, real estate market, house hunting, property search, real estate investment opportunities">
+	<meta name="description" content="Welcome to our real estate website, where you can find the perfect home for you and your family. Whether you're in the market for a cozy apartment or a spacious family home, our website has a wide selection of properties to choose from. Start your search today and find your dream home with us!"> 
+	<meta name="author" content="Agarin Jeremiah O. T."> 
+    <title>PRIME VILLA</title>
+    <link rel="stylesheet" href="/static/fontawesome-free-6.5.1-web/css/fontawesome.css">
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.css">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+</head>
+<body>
+    
+    <div class="container-fluid">
+        <div class="main-container" id="main">
+
+            <div class="sub-header">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-lg-8 col-md-8">
+                      <ul class="info">
+                        <li><i class="fas fa-envelope"></i> primevillainfo@company.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> 5 ogunsiji close, off allen avenue, Ikeja. Lagos</li>
+                      </ul>
+                    </div>
+                    <div class="col-lg-4 col-md-4">
+                      <ul class="social-links">
+                        <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                        <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+
+            <!-- nav starts here -->
+            <div class="nav sticky-top">
+                <div class="logo">
+                    <h1>PRIME VILLA</h1>
+                </div>
+                <div class="nav-right col-md-7">
+                    <ul class="dropdown-content">
+                        <li><a class="nav-btn col-1" href="/">Home</a></li>
+                        <li><a class="nav-btn col-1" href="#contact">Contact</a></li>
+                        <li><a class="nav-btn col-1" href="/property">Property</a></li>
+                    </ul>
+                </div> 
+            </div>
+            <!-- nav ends here -->
+
+            {% block content %}
+
+
+
+
+
+            {% endblock content %}
+
+
+            <!-- footer starts here -->
+            <div class="contact" id="contact">
+                <h3 class="contact-sect">REALTORS YOU CAN TRUST</h3>
+                <div class="contact-wrap row">
+                    <div class="address-main col-md-5">
+                        <h3>ADDRESS</h3>
+                        <p class="address">5 ogunsiji close, <br> off allen avenue, Ikeja. Lagos</p>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.337455705461!2d3.351504073504846!3d6.604921322214898!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b9234071499cb%3A0x2b1a5de922a9039b!2s5%20Ogunsiji%20Cl%2C%20Allen%2C%20Ikeja%20101233%2C%20Lagos!5e0!3m2!1sen!2sng!4v1708867255378!5m2!1sen!2sng" width="300" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+
+
+                <div class="form-main col-md-5">
+                    <h3 class="form-head">Alternatively you can fill in the following contact form:</h3>
+
+                        {% set messages = get_flashed_messages(with_categories=True) %}
+                        {% if messages %}
+                            {% for msg, cat in messages %}
+                                {% if cat == 'error' %}
+                                    <div class="alert alert-danger">{{msg}}</div>
+                                {% else %}
+                                    <div class="alet alert-success">{{msg}}</div>
+                                {% endif %}
+                            {% endfor %}
+                        {% endif %}
+                
+                    <form action="/request/" method="post" class="form">
+                        <input type="hidden" name="csrf_token" value="{{csrf_token()}}" >
+                        <input type="text" name="name" placeholder="Name" form-control>
+                        <input type="email" name="email" placeholder="Email" form-control>
+                        <input type="text" name="subject" placeholder="Subject" form-control>
+                        <textarea name="message" id="message" cols="30" rows="10"></textarea>
+                        <button type="submit" id="button" class="btn btn-lg btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    <div><a href="#main"></a></div>
+    <div  id="footer">
+        <div class="copyright">
+            <div class="cp"><p>&#169;2024 by Prime Properties Portal</p></div>
+        </div>
+    </div>
+    </div>
+    
+    
+    </div>
+        <!-- footer ends here -->
+        <script src="/static/bootstrap/js/bootstrap.js"></script>
+        <script src="/static/jquery/jquery.min.js"></script>
+        
+        <script>
+            $(document).ready(function(){
+    
+                $.ajax({
+                    url: '/display/',
+                    type: "GET",
+                    dataType: "json",  // Change the dataType to "json" to automatically parse JSON response
+                    beforeSend: function(){
+                        $("#show").text("Loading...");
+                    },
+                    success: function(resp){
+                        $("#show").text(""); // Clear previous content
+                        $.each(resp, function(index, property){        
+                            imgcard="";
+                            $.each(property.images,function(i, image) {
+                                if (i == 0) {active = 'active';} else {active = '';}
+                                imgcard += `\
+                                    <div class="carousel-item ${active}">\
+                                      <img src="/static/uploads/${image}" class="d-block w-100" >\
+                                    </div>`;
+                            });
+
+                            cardtag = `\
+                            <div class="col-md-4 col-12 my-3">\
+                                <div id="carouselExample${index}" class="carousel slide" data-bs-ride="carousel">\
+                                    <div class="carousel-inner">\
+                                        ${imgcard}\
+                                    </div>\
+                                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample${index}" data-bs-slide="prev">\
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>\
+                                    <span class="visually-hidden">Previous</span>\
+                                    </button>\
+                                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample${index}" data-bs-slide="next">\
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>\
+                                    <span class="visually-hidden">Next</span>\
+                                    </button>\
+                                </div>\
+                                <p class="label"><b>${property.address}</b></p>\
+                                <p class="bedroom">$${property.price}</p>\
+                                <a href="details/${property.id}" class="booking">VIEW DETAILS</a>\
+                                    </div>\
+                                    `
+
+                            $("#show").append(cardtag);
+                            
+                            
+                        });
+    
+                        
+                    
+                    },
+                    error: function(err){
+                        $("#show").text("Error occurred: " + err.responseText);
+                        $("#show").css({color: "red"});
+                    },
+                    complete: function(){
+                        $("#submit").text("Submit");
+                    }  
+                });
+            });
+
+                $("#searchbtn").click(function(){
+                    var theForm = document.querySelector("#userform");
+                    var formdata = new FormData(theForm);
+                    formdata.append("csrf_token", "{{ csrf_token() }}");
+        
+                    $.ajax({
+                        url: '/search/',
+                        type: "POST",
+                        dataType: "json",  // Change the dataType to "json" to automatically parse JSON response
+                        cache: false,
+                        processData: false,
+                        contentType: false,
+                        data: formdata,
+                        beforeSend: function(){
+                            $("#show").text("Loading...");
+                        },
+                        success: function(resp){
+                            $("#show").text(""); // Clear previous content
+                            $.each(resp, function(index, property){        
+                                imgcard="";
+                                $.each(property.images,function(i, image) {
+                                    if (i == 0) {active = 'active';} else {active = '';}
+                                    imgcard += `\
+                                        <div class="carousel-item ${active}">\
+                                          <img src="/static/uploads/${image}" class="d-block w-100" >\
+                                        </div>`;
+                                });
+    
+                                cardtag = `\
+                                <div class="col-md-4 col-12 my-3">\
+                                    <div id="carouselExample${index}" class="carousel slide" data-bs-ride="carousel">\
+                                        <div class="carousel-inner">\
+                                            ${imgcard}\
+                                        </div>\
+                                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample${index}" data-bs-slide="prev">\
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>\
+                                        <span class="visually-hidden">Previous</span>\
+                                        </button>\
+                                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample${index}" data-bs-slide="next">\
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>\
+                                        <span class="visually-hidden">Next</span>\
+                                        </button>\
+                                    </div>\
+                                    <p class="label"><b>${property.address}</b></p>\
+                                    <p class="bedroom">$${property.price}</p>\
+                                    <a href="details/${property.id}" class="booking">VIEW DETAILS</a>\
+                                        </div>\
+                                        `
+    
+                                $("#show").append(cardtag);
+                                
+                                
+                            });
+
+                        },
+                        error: function(err){
+                            $("#show").text("Error occurred: " + err.responseText);
+                            $("#show").css({color: "red"});
+                        },
+                        complete: function(){
+                            $("#submit").text("Submit");
+                        }  
+                    });
+                });
+        </script>
+</body>
+</html>

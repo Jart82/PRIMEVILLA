@@ -1,0 +1,90 @@
+{% extends "admin/admin_layout.html" %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-8 mx-auto" >
+                {% set m = get_flashed_messages(with_categories=True)%}
+                        {% for cat,msg in m%}
+                            {% if cat=='error'%}
+                            <div class="alert alert-danger">{{msg}}</div>
+                            {%else%}
+                            <div class="alert alert-success">{{msg}}</div>
+                            {%endif%}
+                        {%endfor%}
+                <form action="/admin_dashboard/addprop/" enctype="multipart/form-data" method="post" class="my-3">
+                    <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
+                    <div class="my-3">
+                        <label for="address">Address</label>
+                        <input type="text" class="form-control" name="address" placeholder="Address" id="address">
+                    </div>
+                    <div class="my-3">
+                        <label for="rooms">Rooms</label>
+                        <input type="number" class="form-control" name="rooms" placeholder="rooms" id="rooms">
+                    </div>
+                    <div class="my-3">
+                        <label for="bathrooms">Bathrooms</label>
+                        <input type="number" class="form-control" name="bathrooms" placeholder="bathrooms" id="bathrooms">
+                    </div>
+                    <div class="my-3">
+                        <label for="status">status</label>
+                        <select name="status" id="status" class="form-control">
+                            <option value="Available">Available</option>
+                            <option value="Unavailable">unavailable</option>
+                        </select>
+                    </div>
+                    <div class="my-3">
+                        <label for="category">Category</label>
+                        <select name="category" id="category" class="form-control">
+                            <option value="">Category</option>
+                            <option value="1">Bungalow</option>
+                            <option value="2">Duplex</option>
+                            <option value="3">Mansion</option>
+                        </select>
+                    </div>
+                    <div class="my-3">
+                        <label for="images">Images</label>
+                        <input type="file" class="form-control" name="images" multiple placeholder="images" id="images">
+                    </div>
+                    <div class="my-3">
+                        <label for="price">price</label>
+                        <input type="text" class="form-control" name="price" placeholder="price" id="price">
+                    </div>
+                    <div class="my-3">
+                        <label for="state">State</label>
+                        <select name="state" id="state" class="form-control">
+                            <option value="1">Delta</option>
+                            <option value="2">Edo</option>
+                            <option value="3">Lagos</option>
+                            <option value="4">Benue</option>
+                        </select>
+                    </div>
+                    <div class="my-3">
+                        <label for="lga">LGA</label>
+                        <select name="lga" id="lga" class="form-control">
+                            <option value="1">Okpe</option>
+                            <option value="2">Patani</option>
+                            <option value="3">Sapele</option>
+                            <option value="4">Uvwie</option>
+                            <option value="5">Egor</option>
+                            <option value="6">Etsako</option>
+                            <option value="7">Orhiowon</option>
+                            <option value="8">Esan Central</option>
+                            <option value="9">Agege</option>
+                            <option value="10">Epe</option>
+                            <option value="11">Ikeja</option>
+                            <option value="12">Ikorodu</option>
+                            <option value="13">Oturkpo</option>
+                            <option value="14">Apa</option>
+                            <option value="15">Logo</option>
+                            <option value="16">Obi</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary col-12 my-4">Submit</button>
+                   
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}

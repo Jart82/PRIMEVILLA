@@ -1,0 +1,32 @@
+{% extends "admin/admin_layout.html" %}
+
+{% block content %}
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-10">
+                <div>
+                    <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Subject</th>
+                            <th scope="col">Content</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                            {% for row in request %}
+                                <tr>
+                                    <th scope="row">{{ row.request_name }}</th>
+                                    <td>{{ row.request_email }}</td>
+                                    <td>{{ row.request_subject }}</td>
+                                    <td>{{ row.request_content }}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                      </table>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

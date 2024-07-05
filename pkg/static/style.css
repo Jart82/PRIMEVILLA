@@ -1,0 +1,417 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.main-container{
+    text-transform: uppercase;
+    color: #314264;
+}
+
+
+
+.sub-header {
+    background-color: #fff;
+    padding: 10px 0px;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .sub-header ul li {
+    display: inline-block;
+  }
+  
+  .sub-header ul.social-links {
+    text-align: right;
+  }
+  
+  .sub-header ul.social-links li {
+    margin-left: 8px;
+  }
+  
+  .sub-header ul.social-links li a {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-color: #cdcdcd;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 30px;
+    color: #fff;
+    font-size: 14px;
+    transition: all .3s;
+  }
+  
+  .sub-header ul.social-links li a:hover {
+    background-color: #f35525;
+  }
+  
+  .sub-header ul.info li {
+    font-size: 14px;
+    color: #7a7a7a;
+    border-right: 1px solid #eee;
+    margin-right: 25px;
+    padding-right: 25px;
+  }
+  
+  .sub-header ul.info li:last-child {
+    margin-right: 0px;
+    padding-right: 0px;
+    border-right: none;
+  }
+  
+  .sub-header ul.info li i {
+    font-size: 20px;
+    color: #f35525;
+    margin-right: 8px;
+  }
+
+/* navbar starts here */
+
+.nav{   
+    background-color: rgba(255, 255, 255, 0.779);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+
+}
+.nav-btn:hover{
+    border-top: solid 1px black;
+    border-bottom: solid 2px black;
+    color: #CBB492;
+}
+.logo h1{
+    font-size: large;
+}
+#logo{
+    width: 100%;
+}
+.nav ul{
+	display: flex;
+	list-style-type: none;
+	padding: 10px 5px;
+	justify-content: center;
+}
+.nav ul li{
+	display: inline-block;
+}
+.nav ul li a{
+    border-radius: 10px;
+    padding: 10px 15px;
+	text-decoration: none;
+    color: rgb(49, 66, 100);
+}
+
+/* navbar ends here */
+
+/* .hero-contain{
+    background-image: url(Images/luxury-house-real-estate-sale-property-generative-ai.jpg);
+    background-size: cover;
+} */
+
+/* hero section starts ere */
+
+.hero{
+    position: relative;
+    margin-bottom: 100px;
+}
+.stunning{
+    position: absolute;
+    left: 70px;
+    bottom: -50px;
+    height: 80%;
+    text-align: center;
+    align-self: flex-end;
+    color: white;
+    padding: 30px 30px 0 30px;
+    background-color: #314264e6;
+    line-height: 1.5;
+}
+.stunning p,h3{
+    padding-bottom: 20px;
+    text-align: left;
+}
+
+#amount{
+    font-size: 25px;
+    text-align: center;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+#twok{
+    text-decoration: none;
+    color: white;
+    border: 1px solid white;
+    padding: 15px;
+}
+#contact-us{
+    background-color: rgba(49, 66, 100, 0.708);
+    height: 20px;
+    display: flex;
+    color: white;
+}
+.sale{
+    width: 100%;
+    margin-bottom: 50px;
+}
+#prop-sale{
+    font-size: 30px;
+    width: 100%;
+    height: 10vh;
+    text-align: center;
+    padding-bottom: 70px;
+}
+.box-contain{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+.box{
+    box-shadow: 5px 5px 5px rgba(172, 195, 172, 0.8);
+}
+.label{
+    font-size: 25px;
+}
+.bedroom{
+    padding: 20px 0;
+    color: orange;
+    text-transform: none;
+}
+.description{
+    text-align: left;
+    color: rgb(127, 140, 154);
+    text-transform: none;
+}
+.rent{
+    width: 100%;
+}
+.rent h3{
+    font-size: 30px;
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 20px;
+    padding-bottom: 70px;
+
+}
+.main-rent-container{
+    background-color: #1e3054;
+
+}
+.main-rent-container2{
+    background-color: #293b58;
+    color: #99999e;
+}
+.rent-container{
+    width: 60%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+.rent-head{
+    color: white;
+    font-size: 25px;
+    text-align: center;
+}
+
+.rent-content{
+    width: 40%;
+    padding-top: 70px;
+}
+.rent-bed{
+    text-align: center;
+}
+#rentcont2{
+    padding-top: 40px;
+    width: 40%;
+}
+.rent-price{
+    color: #5272B2;
+    padding-top: 20px;
+    padding-bottom: 70px;
+}
+.realtors{
+    width: 100%;
+    margin-top: 70px;
+}
+.reg{
+    font-size: 25px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.sect-test{
+    background-image: linear-gradient(to left, rgba(110, 110, 197, 0.4), rgba(79, 81, 79, 0.8)), url("Images/point3d-commercial-imaging-ltd-REl9gTW2YFM-unsplash.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+}
+.prop-test{
+    font-size: 30px;
+    color: white;
+    width: 100%;
+    height: 10vh;
+    text-align: center;
+    margin-top: 60px;
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+.testimony{
+    width: 80%;
+    min-height: 400px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+.test-cont{
+    color: white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.testifier{
+    color: orange;
+}
+.contact{
+    width: 100%;
+    color: #283b62;
+    padding-bottom: 50px;
+}
+.contact-sect{
+    font-size: 30px;
+    width: 100%;
+    height: 10vh;
+    text-align: center;
+    margin-top: 60px;
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+.contact-wrap{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+.address-main{
+    width: 40%;
+}
+.address{
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+/* .form-main{
+    width: 30%;
+} */
+.form{
+    
+}
+.form input{
+    height: 30px;
+}
+.form input,textarea{
+    margin-top: 10px;
+    width: 100%;
+}
+
+#footer{
+    background-color: #CBB492;
+    width: 100%;
+    position: fixed;
+    bottom: 0px;
+}
+.copyright{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 80%;
+    margin: auto;
+}
+.agent-contain{
+    padding-bottom: 100px;
+}
+.booking{
+    padding: 10px 20px;
+    width: 200px;
+    text-align: center;
+    background-color: #99999e;
+    color: #1e3054;
+    text-decoration: none;
+}
+.booking:hover{
+    background-color: #CBB492;
+}
+@media all and (max-width: 768px){
+    .nav{
+        display: block;
+    }
+    .logo{
+        width: 20%;
+    }
+    .nav-right{
+        width:100%;
+        padding-bottom: 30px;
+    }
+    .box-contain{
+        display: block;
+    }
+    .box{
+        width: 100%;
+        padding-bottom: 30px;
+    }
+    .contact-wrap{
+        display: block;
+    }
+    .address-main{
+        width: 100%;
+        padding-bottom: 30px;
+    }
+    .form-main{
+        width: 100%;
+        padding-bottom: 30px;
+    }
+    .logo{
+        width: 100%;
+    }
+    .hero{
+        display: block;
+    }
+    .stunning{
+        width: 100%;
+        padding-bottom: 30px;
+    }
+    #contact-us{
+        width: 100%;
+        padding-bottom: 30px;
+    }
+    .rent-container{
+        display: block;
+    }
+    .rent-img{
+        width: 100%;
+        padding-bottom: 30px;
+    }
+    .rent-content{
+        width: 100%;
+        padding-bottom: 30px;
+    }
+    .testimony{
+        display: block;
+    }
+    #rentcont2{
+        width: 100%;
+        padding-bottom: 30px;
+    }
+    .rent-img{
+        width: 100%;
+        padding-bottom: 30px;
+    }
+    .footer{
+        display: block;
+    }
+    .cp{
+        width: 100%;
+    }
+    .social{
+        width: 100%;
+    }
+}

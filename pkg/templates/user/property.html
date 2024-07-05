@@ -1,0 +1,27 @@
+{% extends "user/layout.html" %}
+
+        {% block content %}
+        <div>
+            <div class="mx-auto col-8 my-4">
+                <div class="input-group mb-3">
+                    <form id="userform">
+                        <input type="text" name="search" class="form-control" placeholder="Search" id="search" aria-label="Search" aria-describedby="basic-addon2">
+                    </form>
+                    
+                    <div class="input-group-append">
+                      <button form="userform" class="btn btn-outline-secondary" id="searchbtn" type="button">Search</button>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="sale">
+            <h3 id="prop-sale">AVAILABLE PROPERTIES FOR SALE</h3>
+            <div class="container my-5">
+                <div class="row box" id="show">
+
+                </div>
+            </div>
+            
+        </div>
+        {% endblock content %}
